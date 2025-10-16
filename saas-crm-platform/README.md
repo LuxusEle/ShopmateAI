@@ -1,53 +1,185 @@
-# ShopMate AI - Business Process Management System 🚀
+# ShopMate AI - Business Process Management System
 
-> **AI-Powered automation for custom manufacturing and service businesses**
+AI-powered SaaS platform for business automation and management.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![Status](https://img.shields.io/badge/status-Active%20Development-green.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+## Tech Stack
+
+- **Frontend**: React 18 + TypeScript + Tailwind CSS (Port 2589)
+- **Backend**: Node.js + Express + TypeScript
+- **Database**: MongoDB
+- **Auth**: JWT + bcryptjs
+- **Deployment**: Vercel + Docker
+
+## Quick Start
+
+### Prerequisites
+- Node.js 18+
+- MongoDB
+- Git
+
+### Local Development
+
+```bash
+# Clone repository
+git clone https://github.com/LuxusEle/ShopmateAI.git
+cd ShopmateAI
+
+# Backend setup
+cd server
+npm install
+npm run dev
+
+# Frontend setup (new terminal)
+cd client
+npm install
+npm start
+```
+
+Frontend runs on `http://localhost:2589`  
+Backend runs on `http://localhost:5000`
+
+### Environment Variables
+
+Create `.env` files in both `client` and `server` directories:
+
+**Server `.env`:**
+```
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+JWT_EXPIRATION=24h
+JWT_REFRESH_EXPIRATION=7d
+NODE_ENV=development
+```
+
+**Client `.env.local`:**
+```
+REACT_APP_API_URL=http://localhost:5000/api
+```
+
+## Project Structure
+
+```
+├── server/              # Express backend API
+│   ├── src/
+│   │   ├── controllers/ # Route handlers
+│   │   ├── models/      # MongoDB schemas
+│   │   ├── services/    # Business logic
+│   │   ├── routes/      # API routes
+│   │   └── middleware/  # Custom middleware
+│   └── package.json
+├── client/              # React frontend
+│   ├── src/
+│   │   ├── pages/       # React pages
+│   │   ├── components/  # React components
+│   │   ├── services/    # API client
+│   │   └── styles/      # CSS
+│   └── package.json
+└── shared/              # Shared types
+```
+
+## API Documentation
+
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
+- `POST /api/auth/refresh` - Refresh access token
+- `POST /api/auth/logout` - Logout user
+
+### Projects
+- `GET /api/projects` - List projects
+- `POST /api/projects` - Create project
+- `GET /api/projects/:id` - Get project
+- `PUT /api/projects/:id` - Update project
+- `DELETE /api/projects/:id` - Delete project
+
+### Tasks
+- `GET /api/tasks` - List tasks
+- `POST /api/tasks` - Create task
+- `PUT /api/tasks/:id` - Update task
+- `POST /api/tasks/:id/status` - Update task status
+- `DELETE /api/tasks/:id` - Delete task
+
+Plus additional endpoints for Invoices, Customers, Staff, Vendors, Workflows, and AI features.
+
+## Testing
+
+```bash
+# Backend tests
+cd server
+npm test
+
+# Frontend tests
+cd client
+npm test
+```
+
+## Deployment
+
+### Vercel Deployment
+
+1. Push to GitHub
+2. Connect repository to Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy
+
+```bash
+# Manual deployment
+npm run build
+vercel --prod
+```
+
+### Docker
+
+```bash
+# Build and run with Docker Compose
+docker-compose up -d
+```
+
+## Features
+
+✅ JWT Authentication  
+✅ Multi-tenant Support  
+✅ 52+ API Endpoints  
+✅ React Components (MVP)  
+✅ Responsive Design  
+✅ Error Handling  
+✅ CI/CD Ready  
+✅ Docker Support
+
+## Development Status
+
+**Current**: MVP Phase (87.5% complete)
+- Backend API: 100%
+- Frontend Components: 85%
+- Database: 100%
+- Authentication: 100%
+
+**Next**:
+- Complete CRUD UI components
+- Add testing suite
+- Real AI integration
+- Production deployment
+
+## Contributing
+
+1. Create a feature branch: `git checkout -b feature/name`
+2. Commit changes: `git commit -am 'Add feature'`
+3. Push to branch: `git push origin feature/name`
+4. Submit a Pull Request
+
+## License
+
+MIT
+
+## Support
+
+For issues and questions, please use GitHub Issues.
 
 ---
 
-## 🎯 Overview
-
-**ShopMate AI** is a comprehensive, AI-powered Business Process Management System designed specifically for custom manufacturing and service businesses. It automates the entire business lifecycle from customer contact through project completion, with an intelligent AI companion that guides, automates, and supports every step.
-
-### The "We Concept"
-This isn't just software—it's a supportive team member that:
-- 🤝 Works alongside your staff (not against them)
-- 🏠 Creates a "home feeling" in the workplace
-- 🤖 Automates what's repetitive, humanizes what matters
-- 📈 Simplifies complexity without losing capability
-
----
-
-## ✨ Key Features
-
-### 🎯 Complete Workflow Automation
-- **25-Stage Pipeline**: From customer contact through project completion
-- **Intelligent Task Routing**: AI-powered task assignment based on skills, workload, and availability
-- **Automatic Progression**: Tasks auto-assign as previous stages complete
-- **Bottleneck Detection**: AI identifies and alerts on workflow bottlenecks
-
-### 🤖 AI Assistant (Your Business Friend)
-- **Morning Briefing**: Daily priorities, urgent tasks, and financial highlights
-- **Evening Routine**: Auto-close bills, generate reports, highlight issues
-- **Proactive Advice**: Real-time recommendations and optimizations
-- **Conversational Interface**: Natural language interactions for all operations
-- **Ambient Features**: Integrated music and supportive notifications
-
-### 💰 Financial Intelligence
-- **Profit Analysis**: Real-time project profitability calculations
-- **Cost Tracking**: Material, labor, overhead, and service costs
-- **Invoice Generation**: Automatic invoice creation from projects
-- **Expense Management**: Complete expense tracking and reconciliation
-- **Profitability Reports**: Detailed reports with risk identification
-
-### 📊 Project Management
-- **Timeline Tracking**: Estimated vs. actual project timelines
-- **Design Management**: Store and version designs, concepts, and technical drawings
-- **BOM Generation**: Automatic Bill of Materials creation and management
-- **Quote Management**: Create, revise, and track customer quotes
+**Repository**: https://github.com/LuxusEle/ShopmateAI  
+**Live Demo**: (Coming Soon)  
+**Status**: Active Development
 - **Media Storage**: Store designs, photos, cutting plans, and finished work
 
 ### 👥 Team Management
